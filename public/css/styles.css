@@ -1,13 +1,55 @@
 div progress {
-  -webkit-appearance: none;  
-  appearance: none;
-  color: #00ff00;
-  background-color: #ff0000;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  width: 150px;
-  height: 20px;
-  }
+    text-align: center;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 2px;
+    width: 150px;
+    height: 20px;
+    position: relative;
+}
 
-  progress::-moz-progress-bar { background: green; }
-  progress::-webkit-progress-value { background: green; }
+progress::-webkit-progress-value {
+    background: green;
+}
+progress::-webkit-progress-bar {
+    background: red;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1) inset;
+}
+progress:before {
+    content: attr(value);
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    vertical-align: middle;
+
+    /*Position text over the progress bar */
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.title--graphic {
+    margin: auto;
+}
+
+.title--container {
+    display: flex;
+    justify-content: center;
+}
+.health--container {
+    display: flex;
+    justify-content: center;
+}
+
+.tools--container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.portrait--container {
+    display: flex;
+    justify-content: center;
+}

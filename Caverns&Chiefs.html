@@ -1,32 +1,57 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Caverns & Chiefs 💥</title>
+        <title>Caverns & Chiefs</title>
         <script type = "text/javascript" src="src/game_functions.js"></script>
         <link rel="stylesheet" href="public/css/styles.css">
     </head>
 
     <body style="background-color:#000000;">
-        <!-- App Scale UI -->
-        <div class="app-ui--container">
-
-            <!-- Game Scale UI -->
-            <div class="game-ui--container">
-
-                <!-- Title -->
-                <div data-title-screen>
-                    <img class="title--graphic" src="public/assets/CC-Logo-White.png" alt="Title Title Screen">
-                </div>
-
-                <!-- Player 1-->
-                <div>
-                    <progress id="health" value="100" max="100"></progress><br>
-                    <input type="text" id="DamageP1" name="DamageP1" maxlength="4" size="4">
-                    <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br>
-                    <input type="text" id="HealP1" name="HealP1" maxlength="4" size="4">
-                    <input type="button" onclick="healDamage()" Value="Heal Damage"></button>
-                </div>
+       
+        <!-- Title Container -->
+       <div class="title--container">
+            <!-- Title -->
+            <div data-title-screen>
+                    <img class="title--graphic" src="public/assets/CC-Logo-White.png" alt="Title">
             </div>
         </div>
+
+        <div class="portrait--container">
+            <div>
+                <img src="public/assets/Mothership Chars 05.jpg" width="150px" height="150px">
+                <img src="public/assets/Mothership Chars 13.jpg" width="150px" height="150px">
+                <img src="public/assets/Mothership Chars 16.jpg" width="150px" height="150px">
+                <img src="public/assets/Mothership Chars 26.jpg" width="150px" height="150px">
+                <img src="public/assets/Mothership Chars 38.jpg" width="150px" height="150px">
+                <img src="public/assets/Mothership Chars 88.jpg" width="150px" height="150px">
+                <img src="public/assets/Mothership Chars 94.jpg" width="150px" height="150px">
+                <img src="public/assets/Mothership Chars 999.jpg" width="150px" height="150px">
+            </div>
+        </div>
+        <div class="health--container">
+        <!-- Player Health Bars-->
+            <div>
+                <progress id="p1Health" value="240" max="240"></progress>
+                <progress id="p2Health" value="160" max="160"></progress>
+                <progress id="p3Health" value="160" max="160"></progress>
+                <progress id="p4Health" value="120" max="120"></progress>
+                <progress id="p5Health" value="160" max="160"></progress>
+                <progress id="p6Health" value="100" max="100"></progress>
+                <progress id="p7Health" value="200" max="200"></progress>
+                <progress id="p8Health" value="160" max="160"></progress><br>
+            </div>
+        </div>
+
+        <div class="tools--container">
+            <div>
+                <input type="text" id="DamageP1" name="DamageP1" maxlength="4" size="4">
+                <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br>
+                <input type="text" id="HealP1" name="HealP1" maxlength="4" size="4">
+                <input type="button" onclick="healDamage()" Value="Heal Damage"></button>
+            </div>
+        </div>
+        
+        
 
 
     </body>
