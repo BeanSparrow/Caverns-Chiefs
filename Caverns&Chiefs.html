@@ -16,6 +16,13 @@
             </div>
         </div>
 
+        <div class="GroupDetails--container">
+            <div class="gold--amount">
+                <img src="public/assets/Coins.png" width="50px" height="50px">
+                <p id="gold">0</p>
+            </div>
+        </div>
+
         <div class="portrait--container">
             <div>
                 <img src="public/assets/Mothership Chars 05.jpg" width="150px" height="150px">
@@ -43,11 +50,32 @@
         </div>
 
         <div class="tools--container">
-            <div>
-                <input type="text" id="DamageP1" name="DamageP1" maxlength="4" size="4">
-                <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br>
-                <input type="text" id="HealP1" name="HealP1" maxlength="4" size="4">
-                <input type="button" onclick="healDamage()" Value="Heal Damage"></button>
+            <div></div>
+                <div class="text" style="float: left;">
+                    Select a Player:<br>
+                    <select id="playerSelect" name="PlayerSelect">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="ALL">ALL</option>
+                    </select>
+                </div>
+                <div class ="text" style="float: left;">
+                    <input type="text" id="DamageP1" name="DamageP1" maxlength="4" size="4">
+                    <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br>
+                    <input type="text" id="HealP1" name="HealP1" maxlength="4" size="4">
+                    <input type="button" onclick="healDamage()" Value="Heal Damage"></button>
+                </div><br>
+            <div class="text">
+                Add or Remove Gold<br>
+                <input type="text" id="GoldAmount" name="GoldAmount" maxlength="4" size="4">
+                <input type="button" onclick="addGold()" Value="Add Gold"></button>
+                <input type="button" onclick="subtractGold()" Value="Remove Gold"></button>
             </div>
         </div>
         

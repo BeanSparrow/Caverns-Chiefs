@@ -22,3 +22,17 @@ function playerHealthBarID(playerNum){
     const playerHealthBarIDs = ["Player1Health", "Player2Health", "Player3Health", "Player4Health", "Player5Health", "Player6Health", "Player7Health", "Player8Health"]
     return playerHealthBarIDs[playerNum - 1]
 }
+
+function addGold() {
+    const currentGold = parseInt(document.getElementById("gold").textContent)
+    const addGoldValue = parseInt(document.getElementById("GoldAmount").value)
+    const newGold = currentGold + addGoldValue
+    document.getElementById("gold").innerHTML = newGold.toString()
+}
+
+function subtractGold() {
+    const currentGold = parseInt(document.getElementById("gold").textContent)
+    const removeGoldValue = parseInt(document.getElementById("GoldAmount").value)
+    const newGold = currentGold - removeGoldValue
+    document.getElementById("gold").innerHTML = newGold.toString()
+}
