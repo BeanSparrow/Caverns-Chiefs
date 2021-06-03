@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Caverns & Chiefs 💥</title>
+        <script type = "text/javascript" src="src/game_functions.js"></script>
+        <link rel="stylesheet" href="public/css/styles.css">
+    </head>
+
+    <body style="background-color:#000000;">
+        <!-- App Scale UI -->
+        <div class="app-ui--container">
+
+            <!-- Game Scale UI -->
+            <div class="game-ui--container">
+
+                <!-- Title -->
+                <div data-title-screen>
+                    <img class="title--graphic" src="public/assets/CC-Logo-White.png" alt="Title Title Screen">
+                </div>
+
+                <!-- Player 1-->
+                <div>
+                    <progress id="health" value="100" max="100"></progress><br>
+                    <input type="text" id="DamageP1" name="DamageP1" maxlength="4" size="4">
+                    <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br>
+                    <input type="text" id="HealP1" name="HealP1" maxlength="4" size="4">
+                    <input type="button" onclick="healDamage()" Value="Heal Damage"></button>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
