@@ -1,54 +1,14 @@
 body {
     font-family: monospace;
 }
-div progress {
-    text-align: center;
-    -webkit-appearance: none;
-    appearance: none;
-    margin-bottom: 2px;
-    width: 150px;
-    height: 20px;
-    position: relative;
-}
-
-progress::-webkit-progress-value {
-    background: green;
-}
-progress::-webkit-progress-bar {
-    background: red;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 1) inset;
-}
-progress:before {
-    content: attr(value);
-    font-size: 1.2em;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    vertical-align: middle;
-
-    /*Position text over the progress bar */
-    position: absolute;
-    left: 0;
-    right: 0;
-}
 
 .title--graphic {
     margin: auto;
 }
 
-.title--container {
-    display: flex;
-    justify-content: center;
-}
-.health--container {
-    display: flex;
-    justify-content: center;
-}
-.damageText--container {
-    color: red;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+.text {
+    color: white;
+    margin-right: 20px;
 }
 
 .animatedText {
@@ -71,31 +31,6 @@ progress:before {
     }
 }
 
-.healText--container {
-    color: green;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-.tools--container {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.portrait--container {
-    display: flex;
-    justify-content: center;
-}
-
-.GroupDetails--container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
 .gold--amount {
     color: white;
     text-align: center;
@@ -104,16 +39,6 @@ progress:before {
     border-radius: 10px;
     border-width: thick;
     padding: 15px;
-}
-
-.text {
-    color: white;
-    margin-right: 20px;
-}
-
-.characterNames--container {
-    display: flex;
-    justify-content: center;
 }
 
 .name--box {

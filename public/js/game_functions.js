@@ -20,6 +20,7 @@ window.onload=function(){
   }
 //End Event Listner
 
+// Deal Damage to Individual or All (on Click)
 function dealDamage(){
     const playerNumString = document.getElementById("playerSelect").value
     const damageValue = parseInt(document.getElementById("damageValue").value)
@@ -50,7 +51,7 @@ function dealDamage(){
     }
 }
 
-
+//Heal Damage to Individual or All (on Click)
 function healDamage(){
     const playerNumString = document.getElementById("playerSelect").value
     const healValue = parseInt(document.getElementById("healValue").value)
@@ -92,16 +93,19 @@ function healDamage(){
     }
 }
 
+//Returns Max Health of Player referenced
 function playerMaxHealth(playerNum){
     const playerMaxHealths = [240, 160, 160, 120, 160,100, 200, 160]
     return playerMaxHealths[playerNum -1]
 }
 
+//Returns Health Bar HTML id of Player referenced
 function playerHealthBarID(playerNum){
     const playerHealthBarIDs = ["p1Health", "p2Health", "p3Health", "p4Health", "p5Health", "p6Health", "p7Health", "p8Health"]
     return playerHealthBarIDs[playerNum - 1]
 }
 
+//Adds Gold to Group Gold Count
 function addGold() {
     const currentGold = parseInt(document.getElementById("gold").textContent)
     const addGoldValue = parseInt(document.getElementById("GoldAmount").value)
@@ -109,6 +113,7 @@ function addGold() {
     document.getElementById("gold").innerHTML = newGold.toString()
 }
 
+//Removes Gold from Group Gold Count
 function subtractGold() {
     const currentGold = parseInt(document.getElementById("gold").textContent)
     const removeGoldValue = parseInt(document.getElementById("GoldAmount").value)
@@ -116,6 +121,7 @@ function subtractGold() {
     document.getElementById("gold").innerHTML = newGold.toString()
 }
 
+//Updates the HTML Select Form for Inventory Content
 function inventoryDropdownRefresh() {
     let select = document.getElementById("removeInventory")
 	var selectParentNode = select.parentNode;
@@ -130,6 +136,7 @@ function inventoryDropdownRefresh() {
     }
 }
 
+//Updates the Inventory list and Select form
 function updateInventory(){
     inventoryString = ""
     for (i=0; i < inventory.length; i++){
@@ -143,12 +150,14 @@ function updateInventory(){
     inventoryDropdownRefresh()
 }
 
+//Adds input item to inventory list
 function addInventory() {
     const newItem = document.getElementById("itemName").value
     inventory.push(newItem)
     updateInventory()
 }
 
+//Removes selected item from inventory list
 function removeInventory() {
     const removeItem = document.getElementById("removeInventory").value
     inventory.splice((removeItem - 1),1)

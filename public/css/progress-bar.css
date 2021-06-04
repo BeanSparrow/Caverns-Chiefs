@@ -1,0 +1,30 @@
+div progress {
+    text-align: center;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 2px;
+    width: 150px;
+    height: 20px;
+    position: relative;
+}
+
+progress::-webkit-progress-value {
+    background: green;
+}
+progress::-webkit-progress-bar {
+    background: red;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1) inset;
+}
+progress:before {
+    content: attr(value);
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    vertical-align: middle;
+
+    /*Position text over the progress bar */
+    position: absolute;
+    left: 0;
+    right: 0;
+}

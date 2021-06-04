@@ -1,0 +1,46 @@
+.title--container {
+    display: flex;
+    justify-content: center;
+}
+
+.health--container {
+    display: flex;
+    justify-content: center;
+}
+
+.damageText--container {
+    color: red;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.healText--container {
+    color: green;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.tools--container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.portrait--container {
+    display: flex;
+    justify-content: center;
+}
+
+.GroupDetails--container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.characterNames--container {
+    display: flex;
+    justify-content: center;
+}
