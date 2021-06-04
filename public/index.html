@@ -80,8 +80,8 @@
         <!-- Health Bar Container-->
         <div class="health--container">
             <!-- Player Health Bars-->
-            <div>
-                <progress id="p1Health" value="240" max="240"></progress>
+            <div class="health--bars">
+                <progress id="p1Health" value="240" max="240">Test Text</progress>
                 <progress id="p2Health" value="160" max="160"></progress>
                 <progress id="p3Health" value="160" max="160"></progress>
                 <progress id="p4Health" value="120" max="120"></progress>
@@ -90,6 +90,16 @@
                 <progress id="p7Health" value="200" max="200"></progress>
                 <progress id="p8Health" value="160" max="160"></progress><br/>
             </div>
+        </div>
+
+        <!-- Damage Animation-->
+        <div class="damageText--container">
+                <div class="animatedText" id="damageText"></div>
+        </div>
+
+        <!-- Heal Animation-->
+        <div class="healText--container">
+            <div class="animatedText" id="healText"></div>
         </div>
 
         <!-- Tools Container-->
@@ -114,9 +124,9 @@
                 <!--Damage Functions-->
                 <div class ="text" style="float: left;">
                     <input type="text" id="damageValue" name="damageValue" maxlength="4" size="4">
-                    <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br/>
+                    <input type="button" onclick="dealDamage()" id="dealDamage" Value="Deal Damage"></button><br/>
                     <input type="text" id="healValue" name="healValue" maxlength="4" size="4">
-                    <input type="button" onclick="healDamage()" Value="Heal Damage"></button>
+                    <input type="button" onclick="healDamage()" id="healDamage" Value="Heal Damage"></button>
                 </div><br/>
             </div>
             <!--Gold Functions-->

@@ -3,45 +3,73 @@ playerCount = 9
 inventory = []
 //End Global
 
+//Event Listner
+window.onload=function(){
+    document.getElementById('dealDamage').addEventListener('click', function () {
+        document.querySelector('#damageText.animatedText').classList.remove('animation');
+        setTimeout(function(){
+            document.querySelector('#damageText.animatedText').classList.add('animation')
+        },0);
+      })
+    document.getElementById('healDamage').addEventListener('click', function () {
+        document.querySelector('#healText.animatedText').classList.remove('animation');
+        setTimeout(function(){
+            document.querySelector('#healText.animatedText').classList.add('animation')
+        },0);
+      });
+  }
+//End Event Listner
+
 function dealDamage(){
     const playerNumString = document.getElementById("playerSelect").value
+    const damageValue = parseInt(document.getElementById("damageValue").value)
     if (playerNumString !== "ALL"){
-        const playerNum = parseInt(playerNumString)
+        const playerNum = parseInt(playerNumString) 
         const healthBarId = playerHealthBarID(playerNum) 
         const health = document.getElementById(healthBarId)
         const currentHealth = parseInt(health.value)
-        const damageValue = parseInt(document.getElementById("damageValue").value)
         const newHealth = currentHealth - damageValue
         health.setAttribute("value", newHealth)
+        document.getElementById("damageText").innerHTML = ""
+        document.getElementById("healText").innerHTML = ""
+        document.getElementById("damageText").innerHTML = "Player " + playerNumString + " loses " + damageValue + " health!"
     }
     else {
+
         for (i = 1; i < playerCount; i++){
             const healthBarIdItr = playerHealthBarID(i) 
             const healthItr = document.getElementById(healthBarIdItr)
             const currentHealthItr = parseInt(healthItr.value)
             const damageValueItr = parseInt(document.getElementById("damageValue").value)
-            const newHealthItr = currentHealthItr - damageValueItr
+            const newHealthItr = currentHealthItr - damageValue
             healthItr.setAttribute("value", newHealthItr)
         }
+        document.getElementById("damageText").innerHTML = ""
+        document.getElementById("healText").innerHTML = ""
+        document.getElementById("damageText").innerHTML = "Everyone loses " + damageValue + " health!"
     }
 }
 
 
 function healDamage(){
     const playerNumString = document.getElementById("playerSelect").value
+    const healValue = parseInt(document.getElementById("healValue").value)
     if (playerNumString !== "ALL"){
         const playerNum = parseInt(playerNumString)
         const healthBarId = playerHealthBarID(playerNum) 
         const health = document.getElementById(healthBarId)
         const currentHealth = parseInt(health.value)
-        const healValue = parseInt(document.getElementById("healValue").value)
         const newHealth = currentHealth + healValue
-        const maxHealth = playerMaxHealth(i)
+        const maxHealth = playerMaxHealth(playerNum)
+        document.getElementById("damageText").innerHTML = ""
+        document.getElementById("healText").innerHTML = ""
             if (newHealth >= maxHealth){
-                health.setAttribute("value", maxHealth) 
+                health.setAttribute("value", maxHealth)
+                document.getElementById("healText").innerHTML = "Player " + playerNumString + " is back to full health!" 
             }
             else{
                 health.setAttribute("value", newHealth)
+                document.getElementById("healText").innerHTML = "Player " + playerNumString + " gains " + healValue + " health!"
             }
     }
     else {
@@ -49,8 +77,7 @@ function healDamage(){
             const healthBarIdItr = playerHealthBarID(i) 
             const healthItr = document.getElementById(healthBarIdItr)
             const currentHealthItr = parseInt(healthItr.value)
-            const healValueItr = parseInt(document.getElementById("healValue").value)
-            const newHealthItr = currentHealthItr + healValueItr
+            const newHealthItr = currentHealthItr + healValue
             const maxHealthItr = playerMaxHealth(i)
             if (newHealthItr >= maxHealthItr){
                 healthItr.setAttribute("value", maxHealthItr) 
@@ -59,6 +86,9 @@ function healDamage(){
                 healthItr.setAttribute("value", newHealthItr)
             }
         }
+        document.getElementById("damageText").innerHTML = ""
+        document.getElementById("healText").innerHTML = ""
+        document.getElementById("healText").innerHTML = "Everyone gains " + healValue + " health!"
     }
 }
 

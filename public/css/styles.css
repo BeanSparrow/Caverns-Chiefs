@@ -44,10 +44,43 @@ progress:before {
     display: flex;
     justify-content: center;
 }
+.damageText--container {
+    color: red;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.animatedText {
+    font-size: 1cm;
+}
+
+.animation {
+    animation: fadeAndScale 3s ease-out forwards;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 1);
+}
+@keyframes fadeAndScale {
+    from {
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 1);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.healText--container {
+    color: green;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
 
 .tools--container {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
 }
@@ -103,7 +136,6 @@ progress:before {
     padding: 5px;
     margin: 2px;
     border-color: white;
-    border-radius: 1rem;
     color: black;
     font-weight: bold;
     font-size: 0.6cm;
