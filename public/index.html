@@ -26,7 +26,7 @@
             <div class="inventory--box" style="float: left;">
             Inventory
             <div class="inventory--list" id="inventoryList">
-            - Item 1
+        
             </div>
             </div>
 
@@ -126,11 +126,17 @@
                 <input type="button" onclick="addGold()" Value="Add Gold"></button>
                 <input type="button" onclick="subtractGold()" Value="Remove Gold"></button>
             </div>
-            <!--Inventory Functions-->
+            <!--Inventory Add Functions-->
             <div class="text">
                 Add Item to Inventory<br/>
                 <input type="text" id="itemName" name="itemName" maxlength="25" size="25">
                 <input type="button" onclick="addInventory()" Value="Add Item"></button> 
+            </div>
+            <!--Inventory Remove Functions-->
+            <div class="text">
+                Remove Item From Inventory<br/>
+                <select id="removeInventory"></select>
+                <input type="button" onclick="removeInventory()" Value="Remove Item"></button> 
             </div>
         </div>
         

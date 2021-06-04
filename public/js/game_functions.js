@@ -86,13 +86,31 @@ function subtractGold() {
     document.getElementById("gold").innerHTML = newGold.toString()
 }
 
+function inventoryDropdownRefresh() {
+    let select = document.getElementById("removeInventory")
+	var selectParentNode = select.parentNode;
+	var newSelectObj = select.cloneNode(false); // Make a shallow copy
+	selectParentNode.replaceChild(newSelectObj, select);
+    for (var i = 0; i < inventory.length; i++) {
+        var optn = inventory[i];
+        var el = document.createElement("option");
+        el.textContent = optn;
+        el.value = (i + 1);
+        newSelectObj.appendChild(el);
+    }
+}
+
 function updateInventory(){
     inventoryString = ""
     for (i=0; i < inventory.length; i++){
         inventoryString += "- "
-        inventoryString += inventory[i] + "<br/>"
+        inventoryString += inventory[i] + " "
+        if ((i % 2)-1 == 0){
+            inventoryString += "<br/>"
+        }
     }
     document.getElementById("inventoryList").innerHTML = inventoryString
+    inventoryDropdownRefresh()
 }
 
 function addInventory() {
@@ -102,5 +120,7 @@ function addInventory() {
 }
 
 function removeInventory() {
-    
+    const removeItem = document.getElementById("removeInventory").value
+    inventory.splice((removeItem - 1),1)
+    updateInventory()
 }
