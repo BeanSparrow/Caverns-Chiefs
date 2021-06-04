@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Caverns & Chiefs</title>
-        <script type = "text/javascript" src="game_functions.js"></script>
+        <script type = "text/javascript" src="js/game_functions.js"></script>
         <link rel="stylesheet" href="css/styles.css">
     </head>
 
@@ -12,31 +12,74 @@
        <div class="title--container">
             <!-- Title -->
             <div data-title-screen>
-                    <img class="title--graphic" src="assets/CC-Logo-White.png" alt="Title">
+                    <img class="title--graphic" src="img/CC-Logo-White.png" alt="Title">
             </div>
         </div>
 
+        <!-- Group Details Container-->
         <div class="GroupDetails--container">
-            <div class="gold--amount">
-                <img src="assets/Coins.png" width="50px" height="50px">
+            <!-- Gold Amount-->
+            <div class="gold--amount" style="float: left;">
+                <img src="img/Coins.png" width="50px" height="50px">
                 <p id="gold">0</p>
             </div>
+            <div class="inventory--box" style="float: left;">
+            Inventory
+            <div class="inventory--list" id="inventoryList">
+            - Item 1
+            </div>
+            </div>
+
         </div>
 
+        <!--Character Names Container-->
+        <div class="characterNames--container">
+            <!-- Character Names-->
+            <div class="name--box" id="p1Name">
+            <br/>The Rock
+            </div>
+            <div class="name--box" id="p1Name">
+            <br/>Pete Bomber
+            </div>
+            <div class="name--box" id="p1Name">
+            <br/>Diet Cleric
+            </div>
+            <div class="name--box" id="p1Name">
+            <br/>NoitaMan
+            </div>
+            <div class="name--box" id="p1Name">
+            Chad ThunderCock
+            </div>
+            <div class="name--box" id="p1Name">
+            <br/>Hooblipuff
+            </div>
+            <div class="name--box" id="p1Name">
+            <br/>Yeehaw
+            </div>
+            <div class="name--box" id="p1Name">
+            <br/>Blumgus
+            </div>
+
+        </div>
+
+        <!-- Portrait Container-->
         <div class="portrait--container">
+            <!-- Portraits of Each Player-->
             <div>
-                <img src="assets/player 1 240 health.png" width="150px" height="150px">
-                <img src="assets/player 2 160 health.png" width="150px" height="150px">
-                <img src="assets/player 3 160 health.png" width="150px" height="150px">
-                <img src="assets/player 4 120 health.png" width="150px" height="150px">
-                <img src="assets/player 5 160 health.png" width="150px" height="150px">
-                <img src="assets/player 6 100 health.png" width="150px" height="150px">
-                <img src="assets/player 7 200 health.png" width="150px" height="150px">
-                <img src="assets/player 8 160 health.png" width="150px" height="150px">
+                <img src="img/player-1.png" width="150px" height="150px">
+                <img src="img/player-2.png" width="150px" height="150px">
+                <img src="img/player-3.png" width="150px" height="150px">
+                <img src="img/player-4.png" width="150px" height="150px"> 
+                <img src="img/player-5.png" width="150px" height="150px">
+                <img src="img/player-6.png" width="150px" height="150px">
+                <img src="img/player-7.png" width="150px" height="150px">
+                <img src="img/player-8.png" width="150px" height="150px">
             </div>
         </div>
+        
+        <!-- Health Bar Container-->
         <div class="health--container">
-        <!-- Player Health Bars-->
+            <!-- Player Health Bars-->
             <div>
                 <progress id="p1Health" value="240" max="240"></progress>
                 <progress id="p2Health" value="160" max="160"></progress>
@@ -45,14 +88,17 @@
                 <progress id="p5Health" value="160" max="160"></progress>
                 <progress id="p6Health" value="100" max="100"></progress>
                 <progress id="p7Health" value="200" max="200"></progress>
-                <progress id="p8Health" value="160" max="160"></progress><br>
+                <progress id="p8Health" value="160" max="160"></progress><br/>
             </div>
         </div>
 
+        <!-- Tools Container-->
         <div class="tools--container">
-            <div></div>
+            
+            <div>
+                <!--Select Player Number -->
                 <div class="text" style="float: left;">
-                    Select a Player:<br>
+                    Select a Player:<br/>
                     <select id="playerSelect" name="PlayerSelect">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -65,17 +111,26 @@
                         <option value="ALL">ALL</option>
                     </select>
                 </div>
+                <!--Damage Functions-->
                 <div class ="text" style="float: left;">
-                    <input type="text" id="DamageP1" name="DamageP1" maxlength="4" size="4">
-                    <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br>
-                    <input type="text" id="HealP1" name="HealP1" maxlength="4" size="4">
+                    <input type="text" id="damageValue" name="damageValue" maxlength="4" size="4">
+                    <input type="button" onclick="dealDamage()" Value="Deal Damage"></button><br/>
+                    <input type="text" id="healValue" name="healValue" maxlength="4" size="4">
                     <input type="button" onclick="healDamage()" Value="Heal Damage"></button>
-                </div><br>
+                </div><br/>
+            </div>
+            <!--Gold Functions-->
             <div class="text">
-                Add or Remove Gold<br>
+                Add or Remove Gold<br/>
                 <input type="text" id="GoldAmount" name="GoldAmount" maxlength="4" size="4">
                 <input type="button" onclick="addGold()" Value="Add Gold"></button>
                 <input type="button" onclick="subtractGold()" Value="Remove Gold"></button>
+            </div>
+            <!--Inventory Functions-->
+            <div class="text">
+                Add Item to Inventory<br/>
+                <input type="text" id="itemName" name="itemName" maxlength="25" size="25">
+                <input type="button" onclick="addInventory()" Value="Add Item"></button> 
             </div>
         </div>
         
